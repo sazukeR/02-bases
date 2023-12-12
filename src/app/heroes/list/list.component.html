@@ -3,9 +3,12 @@
 
 
 
-<h3>Heroe Borrado: <small class="text-danger">XXXX</small></h3>
-<h3>No ha borrado nada </h3>
-<button class="btn btn-outline-danger my-2">Borrar utimo heroe</button>
+<h3 *ngIf="deletedHero else nothingWasDeleted">Heroe Borrado: <small class="text-danger">{{ deletedHero }}</small></h3>
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada </h3>
+</ng-template>
+
+<button *ngIf="heroNames.length > 0"  (click)="deleteLastHero()" class="btn btn-outline-danger my-2">Borrar utimo heroe</button>
 
 
 <ul class="list-group">
