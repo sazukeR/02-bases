@@ -8,7 +8,6 @@ import { Character } from '../interfaces/character.interface';
 
 export class MainPageComponent  {
 
-
   public characters: Character[] = [
     {
       name: "Goku",
@@ -19,9 +18,13 @@ export class MainPageComponent  {
       power: 1000
     }
   ]
+  // agregamos el personaje emitido por el hijo, el cual recibimos en este metodo del padre
+  onNewCharacter(character: Character): void {
+      this.characters.push(character)
+  }
 
-  onNewCharacter(character: Character):void {
-      console.log(character, "main")
+  onDeleteCharacter(index: number): void {
+    this.characters.splice(index, 1)
   }
 
 }
