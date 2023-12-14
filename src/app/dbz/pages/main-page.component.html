@@ -1,1 +1,15 @@
-<h1>hola mundo -main page</h1>
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+
+  <div class="col">
+ <!--    [nombre del input que recibe la propiedad en el hijo] = "nombre de la propiedad que pasara al hijo" -->
+    <dbz-list [characterList]="characters"></dbz-list>
+  </div>
+
+  <div class="col">
+    <dbz-add-character></dbz-add-character>
+  </div>
+
+</div>

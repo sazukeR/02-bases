@@ -13,7 +13,6 @@ import { DbzModule } from './dbz/dbz.module';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   // aqui importamos los modulos que queremos del exterior
   imports: [
