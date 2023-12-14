@@ -8,8 +8,10 @@
     <dbz-list [characterList]="characters"></dbz-list>
   </div>
 
+
+<!--   para emitir usamos () para atributos [], en este caso emitimos con @output un nuevo objeto desde el formulario para que sea anexado al arreglo de objetos de la lista ubicado en el componente principal, es decir de hijo emitimos al padre -->
   <div class="col">
-    <dbz-add-character></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></dbz-add-character>
   </div>
 
 </div>

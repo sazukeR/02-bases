@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -8,14 +8,26 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
 
+
+  // con el output vuelvo esta propiedad un evento que puede ser usado por otra propiedad, como si fuera un (click)
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+
   public character: Character = {
-    name: "addi",
-    power: 20
+    name: "",
+    power: 0
   }
 
 
   emitCharacter(): void {
-    console.log(this.character);
+
+    if (this.character.name.length === 0) return;
+
+    console.log(this.character , "list")
+
+    this.onNewCharacter.emit(this.character)
+
   }
 
 }
