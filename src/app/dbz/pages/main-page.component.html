@@ -5,13 +5,13 @@
 
   <div class="col">
  <!--    [nombre del input que recibe la propiedad en el hijo] = "nombre de la propiedad que pasara al hijo" -->
-    <dbz-list [characterList]="dbzService.characters" (onDelete)="dbzService.onDeleteCharacterById($event)"></dbz-list>
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
   </div>
 
 
 <!--   para emitir usamos () para atributos [], en este caso emitimos con @output un nuevo objeto desde el formulario para que sea anexado al arreglo de objetos de la lista ubicado en el componente principal, es decir de hijo emitimos al padre -->
   <div class="col">
-    <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)" ></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="addCharacter($event)" ></dbz-add-character>
   </div>
 
 </div>
